@@ -5,35 +5,4 @@
 body {
   background-color: #0B1220;
   color: white;
-  font-family: 'Inter', sans-serif;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
-/* Glow and particle styles */
-.glow {
-  box-shadow: 0 0 18px rgba(125,232,255,0.12), 0 0 48px rgba(14,165,233,0.06);
-}
-
-.pulse {
-  animation: pulse 3s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 6px rgba(125,232,255,0.06); transform: translateY(0); }
-  50% { box-shadow: 0 0 28px rgba(125,232,255,0.14); transform: translateY(-2px); }
-  100% { box-shadow: 0 0 6px rgba(125,232,255,0.06); transform: translateY(0); }
-}
-
-.particles {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: radial-gradient(rgba(125,232,255,0.02) 1px, transparent 1px);
-  background-size: 40px 40px;
-  opacity: 0.6;
-  mix-blend-mode: screen;
 }
