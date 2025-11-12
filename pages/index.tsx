@@ -23,9 +23,7 @@ export default function Home() {
   const [loading, setLoading] = useState<boolean>(false);
   const [balance, setBalance] = useState<number>(1000);
 
-  useEffect(() => {
-    setSeed(randomSeed());
-  }, []);
+  useEffect(() => { setSeed(randomSeed()) }, []);
 
   useEffect(() => {
     const reg = JSON.parse(localStorage.getItem(MOCK_REGISTRY_KEY) || '[]');
@@ -73,19 +71,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-white p-6 flex items-center justify-center relative overflow-hidden">
-      <div className="particles" aria-hidden />
       <div className="max-w-4xl w-full bg-gradient-to-b from-slate-900/80 to-slate-900/60 rounded-2xl p-8 shadow-2xl border border-slate-800 backdrop-blur-sm">
+
         <header className="flex items-center gap-4 mb-6">
-          <div className="w-16 h-16 flex items-center justify-center bg-gradient-to-tr from-aipcyan to-aipblue rounded-xl shadow-lg glow pulse">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 3c3.866 0 7 3.134 7 7s-3.134 7-7 7-7-3.134-7-7 3.134-7 7-7z" fill="rgba(255,255,255,0.06)"/>
-              <path d="M6 20c2 0 3.5-3 6-3s4 3 6 3" stroke="#ffffff" strokeOpacity="0.95" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-          <div>
-            <h1 className="text-3xl font-semibold">AIP — Anonymous Identity Protocol</h1>
-            <p className="text-slate-400 mt-1">Privacy is your ID · Web3 identity layer</p>
-          </div>
+          <h1 className="text-3xl font-semibold">AIP — Anonymous Identity Protocol</h1>
           <div className="ml-auto text-right">
             <div className="text-sm text-slate-400">Mock $AID balance</div>
             <div className="font-medium text-sky-300 text-lg">{balance} $AID</div>
@@ -93,10 +82,9 @@ export default function Home() {
         </header>
 
         <main className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
           <section className="bg-slate-800/60 rounded-xl p-6 border border-slate-700">
             <h2 className="text-xl font-semibold mb-3">1 — Generate anonymous identity</h2>
-            <p className="text-slate-400 text-sm mb-4">Simulates local ZK-like proof generation by hashing a local seed + nonce.</p>
-
             <label className="block text-slate-300 text-sm mb-2">Local seed</label>
             <input value={seed} onChange={e => setSeed(e.target.value)} className="w-full bg-slate-900/40 border border-slate-700 rounded px-3 py-2 mb-3 outline-none" />
 
@@ -136,9 +124,13 @@ export default function Home() {
               <div className="text-lg font-semibold text-sky-300">$AID</div>
             </div>
           </aside>
+
         </main>
 
-        <footer className="mt-6 text-sm text-slate-500 text-center">AIP — Privacy is your ID</footer>
+        <footer className="mt-6 text-sm text-slate-500 text-center">
+          AIP — Privacy is your ID
+        </footer>
+
       </div>
     </div>
   );
